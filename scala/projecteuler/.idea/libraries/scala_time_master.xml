@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="scala-time-master">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Maxthon Downloads/scala-time-master.zip!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,22 @@
+-- Simple word semantics
+
+S->N V N.
+N->A N
+
+V->plays with
+V->looks at
+V->eats
+V->walks
+V->checks out
+
+N->sam
+N->banana
+N->dog
+N->apple
+N->day
+
+A->great
+A->beautiful
+A->tasteful
+A->shiny
+A->furry

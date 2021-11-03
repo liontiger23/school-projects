@@ -1,0 +1,71 @@
+
+1. Strong static typing
+
+             5  :: Integer
+            'a' :: Char
+            inc :: Integer -> Integer
+        [1,2,3] :: [Integer]
+        ('b',4) :: (Char,Integer)
+
+  inc n = n + 1
+
+
+2. Function types
+
+Lisp:
+
+  (defun max (a b) (if (> a b) a b))
+
+  (max 1 2)
+
+Haskell:
+
+  max :: Ord p => p -> p -> p
+  max a b = if a > b then a else b
+
+  max 1 2  ~  (max 1) 2  ~  1 `max` 2
+  max 1 :: Integer -> Integer
+
+  1 / 2  ~  (1 /) 2  ~  (/) 1 2  ~  (/ 2) 1
+
+  max = \a -> \b -> if a > b then a else b
+
+  uncurry max :: Ord p => (p,p) -> p
+
+
+3. Algebraic types
+
+data Bool = True | False
+data Color = Red | Green | Blue
+
+data Pair a b = P a b
+P 1 2 :: Pair Integer Integer
+data (a,b) = (a,b)
+
+data List a = Nil | Cons a (List a)
+data [a]    = []  | a:[a]
+
+length :: [a] -> Integer
+length x:xs = 1 + length xs  ~  length _:xs = 1 + length xs
+length []   = 0              ~  length _    = 0
+
+head x:_  = x
+tail _:xs = xs
+
+map _ [] = []
+map f (x:xs) = f x : map f xs
+
+zip (x:xs) (y:ys) = (x,y) : zip xs ys
+zip _ _ = []
+
+unzip ((x,y):ps) = let (xs,ys) = unzip ps in (x:xs,y:ys)
+unzip _ = ([],[])
+
+
+4. Lazyness
+
+inf = inf
+
+ones = 1 : ones
+nats = 1 : map (+1) nats
+fibs = 1 : 1 : map (uncurry (+)) (zip fibs (tail fibs))

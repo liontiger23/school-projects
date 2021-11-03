@@ -1,0 +1,1 @@
+[Rule ('S',"N V N."),Rule ('N',"A N"),Rule ('V',"plays with"),Rule ('V',"looks at"),Rule ('V',"eats"),Rule ('V',"walks"),Rule ('V',"checks out"),Rule ('N',"sam"),Rule ('N',"banana"),Rule ('N',"dog"),Rule ('N',"apple"),Rule ('N',"day"),Rule ('A',"great"),Rule ('A',"beautiful"),Rule ('A',"tasteful"),Rule ('A',"shiny"),Rule ('A',"furry")]
